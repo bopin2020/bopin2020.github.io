@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ksecdd RPC Memory Leak?
-date: 2025-07-1
+date: 2025-08-06
 categories: [Windows,Crypt,Vuln]
 tags: [Windows]
 ---
@@ -75,3 +75,10 @@ CreateFile("\Device\Ksecdd")
 DeviceIoControl(file,0x398000)
 调试观察内存情况
 ```
+
+## reference
+● https://www.unknowncheats.me/forum/4352316-post1.html     
+● https://blog.scrt.ch/2024/11/11/exploiting-ksecdd-through-server-silos/   
+● https://github.com/scrt/KexecDDPlus   
+● https://github.com/floesen/KExecDD/   
+● https://tierzerosecurity.co.nz/2024/04/29/kexecdd.html    
