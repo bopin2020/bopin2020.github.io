@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Crypt_service_details
+title: Crypt service details
 date: 2025-08-11
 categories: [Windows,Crypt,Vuln]
 tags: [Windows]
