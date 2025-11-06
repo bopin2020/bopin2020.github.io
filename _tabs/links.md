@@ -14,7 +14,8 @@ order: 5
 
 ### ga1ois
 
-https://github.com/ga1ois/BlackHat-Europe-2022
+[BlackHat-Europe-2022](https://github.com/ga1ois/BlackHat-Europe-2022)
+
 [EU-22-Yan-Select-Bugs-From-Binary-Where-Pattern-Like-CVE-1337-Days](https://i.blackhat.com/EU-22/Wednesday-Briefings/EU-22-Yan-Select-Bugs-From-Binary-Where-Pattern-Like-CVE-1337-Days.pdf)
 
 
