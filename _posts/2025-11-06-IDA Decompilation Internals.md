@@ -26,11 +26,11 @@ tags: [Reverse,Windows,IDA]
 
 ida-domain的反编译接口  `Database.functions.get_pseudocode` 
 
-![image-20251106151948721](..\imgs\image-20251106151948721.png)
+![image-20251106151948721](../imgs/image-20251106151948721.png)
 
 调用 Functions 提供的  `get_pseudocode`接口
 
-![image-20251106152023294](..\imgs\image-20251106152023294.png)
+![image-20251106152023294](../imgs/image-20251106152023294.png)
 
 
 
@@ -56,7 +56,7 @@ The ida_hexrays.pyd file is a Python extension module that exposes the Hex-Rays 
 
 其中ida_hexrays.pyi  是静态类型文件
 
-![image-20251106152132118](..\imgs\image-20251106152132118.png)
+![image-20251106152132118](../imgs/image-20251106152132118.png)
 
 这里就有两种方式分析 hexrays.pyd库文件了
 
@@ -65,7 +65,7 @@ The ida_hexrays.pyd file is a Python extension module that exposes the Hex-Rays 
 
 笔者采用第二种方式。简单逆向发现，在反编译函数时 hexrays.pyd会判断是否是主线程，如果不是就返回。 
 
-![image-20251106152240282](..\imgs\image-20251106152240282.png)
+![image-20251106152240282](../imgs/image-20251106152240282.png)
 
 
 
@@ -79,7 +79,7 @@ The ida_hexrays.pyd file is a Python extension module that exposes the Hex-Rays 
 
 
 
-![image-20251106152340704](..\imgs\image-20251106152340704.png)
+![image-20251106152340704](../imgs/image-20251106152340704.png)
 
 接下来我们跟进到hexx64 找到反编译函数内部，分析清楚为什么反编译函数不支持多线程。
 
@@ -89,7 +89,7 @@ The ida_hexrays.pyd file is a Python extension module that exposes the Hex-Rays 
 
 通过对 `set_hexdsp`进行验证，确定 `sub_180216400`为之前的  task_dispatch函数
 
-![image-20251106152543576](..\imgs\image-20251106152543576.png)
+![image-20251106152543576](../imgs/image-20251106152543576.png)
 
 hexx64内部有反调试功能，禁止分析task_dispatch函数   
 
@@ -99,7 +99,7 @@ hexx64内部有反调试功能，禁止分析task_dispatch函数
 
 关于 DYLD Shared Cache Utils dscu 参考 [dscu](https://docs.hex-rays.com/user-guide/plugins/plugins-shipped-with-ida/dyld-shared-cache-utils)
 
-![image-20251106152658207](..\imgs\image-20251106152658207.png)
+![image-20251106152658207](../imgs/image-20251106152658207.png)
 
 
 
@@ -285,13 +285,13 @@ rcx=000000000000023f rdx=00007ffc87a262e0 r8=0000021950781fd8 r9=0000021949eeb9c
 
 `hexx64!task_dispatch` 函数有 621个分支，最开始笔者以为反编译函数需要拆分为这么多分步骤
 
-![image-20251106173133225](..\imgs\image-20251106173133225.png)
+![image-20251106173133225](../imgs/image-20251106173133225.png)
 
 
 
 反编译函数 rcx参数为 0x236， 笔者这里符号化为 `decompile_top`  和`decompile_internals `  
 
-![image-20251106173237851](..\imgs\image-20251106173237851.png)
+![image-20251106173237851](../imgs/image-20251106173237851.png)
 
 ```c
 __int64 __fastcall decompile_top(__int64 a1, __int64 a2, int a3, int a4, int a5)
@@ -305,7 +305,7 @@ __int64 __fastcall decompile_top(__int64 a1, __int64 a2, int a3, int a4, int a5)
 
 **hexrays 插件在开发期间基本功能之一是考虑授权，并且hexrays decompiler具备UI，是一种QT插件。写过UI开发的都有过这种经历即 UI响应或交互与后端数据绑定关系，这种耦合性约束了反编译函数并行操作:)**  
 
-![image-20251106173833197](..\imgs\image-20251106173833197.png)
+![image-20251106173833197](../imgs/image-20251106173833197.png)
 
 
 
@@ -317,9 +317,9 @@ __int64 __fastcall decompile_top(__int64 a1, __int64 a2, int a3, int a4, int a5)
 
 从最初构想上支持反编译一块代码片段，最终将这些snippet 伪代码通过AST 组装起来形成一个完整函数的伪代码
 
-![image-20251106174439622](..\imgs\image-20251106174439622.png)
+![image-20251106174439622](../imgs/image-20251106174439622.png)
 
-![image-20251106174632795](..\imgs\image-20251106174632795.png)
+![image-20251106174632795](../imgs/image-20251106174632795.png)
 
 
 
@@ -327,7 +327,7 @@ __int64 __fastcall decompile_top(__int64 a1, __int64 a2, int a3, int a4, int a5)
 
 比如 `handle_microcode` 处理microcode代码函数    Pseudocode 和 microcode都会存储在数据库中， hex-rays 插件与数据库的耦合性也导致了支持并发的困难性增大。
 
-![image-20251106174928493](..\imgs\image-20251106174928493.png)
+![image-20251106174928493](../imgs/image-20251106174928493.png)
 
 
 
@@ -348,7 +348,7 @@ __int64 __fastcall decompile_top(__int64 a1, __int64 a2, int a3, int a4, int a5)
 
 `Database` 类提供了 `execute_script` 接口 可以直接调用，ida_domain api较以往使用确实方便和简单多。
 
-![image-20251106175918128](..\imgs\image-20251106175918128.png)
+![image-20251106175918128](../imgs/image-20251106175918128.png)
 
 
 
