@@ -566,7 +566,7 @@ private void initializeTreeView(DiffDBReaderManager dbm, DiffDBStreamTable st, D
 
 
 ## demo
-<iframe width="420" height="315" src="https://youtu.be/fwBt_1NpgoU" frameborder="0"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fwBt_1NpgoU?si=L0YGHWM8tFSvIMIV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
