@@ -567,7 +567,7 @@ private void initializeTreeView(DiffDBReaderManager dbm, DiffDBStreamTable st, D
 
 ## demo
 <video controls width="100%">
-	<source src="../videos/state_restore_demo.mp4" type="video/mp4">
+	<source src="https://bopin.me/videos/state_restore_demo.mp4" type="video/mp4">
 </video>
 
 
