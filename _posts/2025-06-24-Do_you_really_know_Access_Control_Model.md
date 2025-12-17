@@ -350,6 +350,20 @@ NAMED CAPABILITIES Lpac Package Manager Operation Capability Group
 
 仅就资源而言，可以无视admin,system这种身份的甄别。有一个比较明显的案例是 `TrustedInstaller`特权，它是基于SID `S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464` 对  `File/Register`进行访问控制。[Windows Resource Protection](https://learn.microsoft.com/en-us/windows/win32/wfp/windows-resource-protection-portal)
 
+
+
+## Groups
+
+```
+Update:  本节属于更新内容
+```
+
+笔者在对ETW进行研究时，偶然发现了 `Performance Log Users` 组。简单说ETW 需要完成访问控制，比如授权哪些用户可以start, stop trace session, 哪些用户只能 query等。`Performance Log Users` 组就是对上述rights权限进行模板化的分组实现  [event access control](https://learn.microsoft.com/en-us/windows/win32/api/evntcons/nf-evntcons-eventaccesscontrol)
+
+james 有过研究 [here](https://x.com/tiraniddo/status/1098963946785202176)  对于Wellknown SID 和组的关系也可以参考 [well-known SID](https://system32.eventsentry.com/codes/field/Well-known%20Security%20Identifiers%20(SIDs)) 笔者也放在了自己的git上 [here](https://github.com/bopin2020/WindowsCamp/tree/main/Windows%E8%AE%A4%E8%AF%81%E6%A8%A1%E5%9E%8B/SID)
+
+
+
 # Reference
 
 - https://googleprojectzero.blogspot.com/2014/10/did-man-with-no-name-feel-insecure.html
