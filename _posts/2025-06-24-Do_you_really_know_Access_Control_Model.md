@@ -362,6 +362,7 @@ Update:  本节属于更新内容
 
 james 有过研究 [here](https://x.com/tiraniddo/status/1098963946785202176)  对于Wellknown SID 和组的关系也可以参考 [well-known SID](https://system32.eventsentry.com/codes/field/Well-known%20Security%20Identifiers%20(SIDs)) 笔者也放在了自己的git上 [here](https://github.com/bopin2020/WindowsCamp/tree/main/Windows%E8%AE%A4%E8%AF%81%E6%A8%A1%E5%9E%8B/SID)
 
+(security groups)[https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/identity/ad-ds/manage/understand-security-groups.md#performance-log-users]
 
 
 # Reference
