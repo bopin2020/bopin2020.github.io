@@ -2,7 +2,7 @@
 layout: post
 title: TheWizards APT IPv6 SLAAC And RDNSS MITM Lateral Movement on Windows
 date: 2026-01-15
-categories: [Windows,IPv6,Lateral Movement,MITM]
+categories: [Windows,IPv6,MITM]
 tags: [Windows]
 ---
 
